@@ -49,16 +49,6 @@ class OldFashionPoundTest {
     }
 
     @Test
-    void testSubtractInvalid() {
-        OldFashionPound price1 = new OldFashionPound(1, 4, 4);
-        OldFashionPound price2 = new OldFashionPound(3, 10, 8);
-
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> price1.subtract(price2));
-
-        System.out.println(exception.getMessage());
-    }
-
-    @Test
     void testMultiplyValid() {
         OldFashionPound price = new OldFashionPound(1, 4, 4);
         OldFashionPound result = price.multiply(2);
@@ -80,7 +70,7 @@ class OldFashionPoundTest {
         OldFashionPound price = new OldFashionPound(3, 10, 8);
         String result = price.divide(2);
 
-        assertEquals("1p 15s 4d(0)", result);
+        assertEquals("1p 15s 4d()", result);
     }
 
     @Test

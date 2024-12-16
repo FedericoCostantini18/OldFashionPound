@@ -34,10 +34,6 @@ public class OldFashionPound {
     public OldFashionPound subtract(OldFashionPound p) {
         int price1InPence = transformInPence();
         int price2InPence = p.transformInPence();
-//        if(price2InPence > price1InPence) {
-//            OldFashionPound result = new OldFashionPound(price2InPence - price1InPence);
-//            throw new IllegalArgumentException("the minuend cannot be larger than the subtrahend, the result in this case is - " + result);
-  //      }
         return new OldFashionPound(price1InPence - price2InPence);
     }
 
