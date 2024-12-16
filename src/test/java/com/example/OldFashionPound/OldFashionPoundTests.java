@@ -14,6 +14,19 @@ class OldFashionPoundTest {
     }
 
     @Test
+    void testConstructorFromComponents() {
+        OldFashionPound price = new OldFashionPound(2, 15, 8);
+        assertEquals(2, price.getSterline());
+        assertEquals(15, price.getScellini());
+        assertEquals(8, price.getPence());
+
+        OldFashionPound normalizedPrice = new OldFashionPound(1, 25, 14);
+        assertEquals(2, normalizedPrice.getSterline());
+        assertEquals(6, normalizedPrice.getScellini());
+        assertEquals(2, normalizedPrice.getPence());
+    }
+
+    @Test
     void testAdd() {
         OldFashionPound price1 = new OldFashionPound(2, 15, 8);
         OldFashionPound price2 = new OldFashionPound(1, 4, 4);

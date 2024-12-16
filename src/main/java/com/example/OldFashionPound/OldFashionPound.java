@@ -1,12 +1,10 @@
 package com.example.OldFashionPound;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class OldFashionPound {
     private int sterline;
     private int scellini;
@@ -17,6 +15,12 @@ public class OldFashionPound {
         int reminder = totalpence%240;
         this.scellini = reminder/12;
         this.pence = reminder%12;
+    }
+
+    public OldFashionPound(int sterline,int scellini,int pence) {
+        this.pence = pence % 12;
+        this.scellini = (scellini + pence/12) % 20;
+        this.sterline = sterline + (scellini + pence/12)/20;
     }
 
     private int transformInPence() {
